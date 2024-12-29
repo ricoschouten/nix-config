@@ -1,5 +1,5 @@
 {
-  description = "NixOS and nix-darwin configs for my machines";
+  description = "NixOS, Nix Darwin and Home Manager configs";
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -46,12 +46,12 @@
 
     # Define user configurations
     users = {
-      nabokikh = {
-        avatar = ./files/avatar/face;
-        email = "alexander.nabokikh@olx.pl";
-        fullName = "Alexander Nabokikh";
-        gitKey = "C5810093";
-        name = "nabokikh";
+      rico = {
+        email = "ricoschouten@gmail.com";
+        name = "rico";
+        fullName = "Rico Schouten";
+        # avatar = ./files/avatar/face;
+        # gitKey = "C5810093";
       };
     };
 
@@ -94,19 +94,12 @@
         ];
       };
   in {
-    nixosConfigurations = {
-      energy = mkNixosConfiguration "energy" "nabokikh";
-      nabokikh-z13 = mkNixosConfiguration "nabokikh-z13" "nabokikh";
-    };
-
     darwinConfigurations = {
-      "nabokikh-mac" = mkDarwinConfiguration "nabokikh-mac" "nabokikh";
+      "mba" = mkDarwinConfiguration "mba" "rico";
     };
 
     homeConfigurations = {
-      "nabokikh@energy" = mkHomeConfiguration "x86_64-linux" "nabokikh" "energy";
-      "nabokikh@nabokikh-mac" = mkHomeConfiguration "aarch64-darwin" "nabokikh" "nabokikh-mac";
-      "nabokikh@nabokikh-z13" = mkHomeConfiguration "x86_64-linux" "nabokikh" "nabokikh-z13";
+      "rico@mba.local" = mkHomeConfiguration "aarch64-darwin" "rico" "mba";
     };
 
     overlays = import ./overlays {inherit inputs;};
