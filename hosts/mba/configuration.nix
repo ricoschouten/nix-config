@@ -141,7 +141,7 @@
       "nikitabobko/tap"
       "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
-    onActivation.cleanup = "zap";
+    # onActivation.cleanup = "zap";
   };
 
   # Used for backwards compatibility, please read the changelog before changing.
