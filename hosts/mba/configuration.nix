@@ -138,6 +138,7 @@
       "font-sf-mono-nerd-font-ligaturized"
     ];
     taps = [
+      "nikitabobko/tap"
       "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
     onActivation.cleanup = "zap";
