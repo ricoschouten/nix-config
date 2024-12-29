@@ -135,6 +135,10 @@
     enable = true;
     casks = [
       "aerospace"
+      "font-sf-mono-nerd-font-ligaturized"
+    ];
+    taps = [
+      "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
     onActivation.cleanup = "zap";
   };
